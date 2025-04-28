@@ -1,0 +1,469 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #333;
+    color: white;
+    padding: 0 20px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+    margin-right: 15px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 40px;
+    color: white;
+}
+
+/* Navbar */
+.navbar {
+    position: relative;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    margin: 0 15px;
+}
+
+.menu li a, 
+.menu li .btn {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu li a:hover, 
+.menu li .btn:hover {
+    background-color: #ddd;
+    color: black;
+}
+/* Ícones sociais no canto esquerdo */
+.social-icons {
+    position: fixed;
+    top: 78.5%;
+    left: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 1000;
+}
+
+.social-icons a {
+    color: rgb(19, 18, 18);
+    font-size: 22px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #00bfff; /* Cor quando passar o mouse (exemplo: azul claro) */
+}
+
+/* Seções gerais */
+section {
+    padding: 40px 0px; /* Espaçamento interno */
+    margin: 0; /* Centraliza as seções */
+    text-align: center; /* Centraliza o conteúdo por padrão */
+} 
+
+/* Cards */
+.card-section {
+    background-color: #f9f9f9;
+}
+
+.card {
+    background-color: white;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    width: 200px;
+    text-align: center;
+}
+
+.card h3 {
+    margin: 10px 0;
+}
+
+.card a {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    background-color: #4498be;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.card a:hover {
+    background-color: #45a049;
+}
+
+/* Estilo para a seção Tecnologias */
+.card-section {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.card-section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Flashcards */
+.flashcard-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Espaçamento entre os flashcards */
+}
+
+.flashcard {
+    width: 200px; /* Largura fixa para todos os flashcards */
+    height: 250px; /* Altura fixa para todos os flashcards */
+    perspective: 1000px; /* Necessário para o efeito de flip */
+}
+
+.flashcard .front,
+.flashcard .back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden; /* Esconde o lado de trás quando não está visível */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center; /* Centraliza verticalmente o conteúdo */
+    justify-content: center; /* Centraliza horizontalmente o conteúdo */
+    padding: 20px;
+    transition: transform 0.6s ease;
+    box-sizing: border-box; /* Garante que padding não afete o tamanho */
+}
+
+.flashcard .front {
+    background-color: #e06bbd;
+    color: white;
+    font-size: 18px; /* Tamanho da fonte para o título */
+    font-weight: bold;
+    text-align: center;
+}
+
+.flashcard .back {
+    background-color: #f4f4f4;
+    color: #333;
+    font-size: 16px; /* Tamanho da fonte para o texto */
+    line-height: 1.5; /* Espaçamento entre linhas */
+    text-align: center;
+    transform: rotateY(180deg); /* Inicialmente escondido */
+}
+
+.flashcard:hover .front {
+    transform: rotateY(180deg); /* Gira para esconder o lado da frente */
+}
+
+.flashcard:hover .back {
+    transform: rotateY(0); /* Gira para mostrar o lado de trás */
+}
+
+/* Home */
+.home-section {
+    display: flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fdfdfd;
+}
+
+.home-section h2 {
+    text-align: left; /* Alinha o texto à esquerda */
+    font-size: 21px; /* Ajusta o tamanho da fonte */
+    font-weight: normal; /* Define a fonte como normal */
+    color: #333; /* Cor do texto */
+    margin: 20px 0; /* Espaçamento superior e inferior */
+    padding: 0; /* Remove o padding */
+}
+
+/* Estilo para o h3 na seção home */
+.home-section h3 {
+    text-align: left;
+    font-size: 60px;
+    font-weight: bold;
+    margin: 10px 0;
+    padding: 0;
+    
+    background: linear-gradient(90deg, #b38cf7, #b44aa3); /* Gradiente lilás */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text; /* Para navegadores que suportam sem prefixo */
+    
+}
+
+/* Estilo para o destaque no nome */
+.home-section h3 .highlight {
+    color: #121414; /* Cor específica para "Amanda Alves" */
+    font-weight: bold; /* Deixa o nome em negrito */
+    padding: 0; /* Remove o padding */
+}
+.home-section p {
+    font-size: 18px; /* Tamanho da fonte do parágrafo */
+    color: #555; /* Cor do texto */
+    text-align: left; /* Alinha o texto à esquerda */
+    
+}
+/* Contato */
+.contato-section {
+    padding: 40px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.contato-section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: bold;
+}
+
+.contato-container {
+    display: flex; /* Alinha os itens na horizontal */
+    flex-direction: row; /* Define a direção horizontal */
+    align-items: center; /* Centraliza os itens verticalmente */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    gap: 40px; /* Espaçamento entre os itens */
+}
+
+.contato-info {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+    text-align: left; /* Alinha o texto à esquerda */
+}
+
+.contato-info p {
+    margin: 10px 0;
+}
+
+.contato-info a {
+    color: #0077b5;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contato-info a:hover {
+    text-decoration: underline;
+}
+
+.contato-botao {
+    margin-top: 0; /* Remove o espaçamento superior */
+}
+
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 15px 15px 20px;
+    background-color: #25d366;
+    color: white;
+    font-size: 0px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 30px;
+    box-shadow: 0 4px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-whatsapp i {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.btn-whatsapp:hover {
+    background-color: #1da851;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+h2 {
+    font-size: 32px;
+    margin-bottom:0;
+    color: #333;
+    padding:0;
+    margin-right: 0%;
+}
+/* Efeito de digitação */
+.typing {
+    border-right: 2px solid #333; /* Cursor piscando */
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    animation: typing 3s steps(30, end), blink 0.5s step-end infinite;
+}
+
+/* Cursor piscando */
+.typing.cursor {
+    border-right: 2px solid #eee4e4;
+    animation: blink 0.5s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    from {
+        border-color: transparent;
+    }
+    to {
+        border-color: #333;
+    }
+}
+
+/* Estilo para a seção Sobre Mim */
+.sobre-section {
+    padding: 60px 2px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.sobre-section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: bold;
+}
+
+.sobre-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.sobre-texto {
+    flex: 1;
+    max-width: 600px;
+    font-size: 18px;
+    color: #555;
+    line-height: 1.8;
+    text-align: left;
+}
+
+.sobre-texto strong {
+    color: #0077b5; /* Destaque para palavras importantes */
+}
+
+.sobre-imagem {
+    flex: 1;
+    max-width: 300px;
+}
+
+.sobre-imagem img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para o footer */
+footer {
+    background-color: #333; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    text-align: center; /* Centraliza o texto */
+    padding: 2px 0; /* Espaçamento interno */
+    font-size: 16px; /* Tamanho da fonte */
+    position: relative; /* Garante que o footer fique no fluxo da página */
+    width: 100%; /* Ocupa toda a largura */
+}
+
+footer a {
+    color: #00bfff; /* Cor dos links */
+    text-decoration: none; /* Remove o sublinhado */
+    font-weight: bold; /* Deixa os links em negrito */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+
+/* Responsividade para dispositivos menores */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+    }
+
+    .menu li {
+        margin: 0;
+        text-align: center;
+    }
+
+    .menu.show {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .contato-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .btn-whatsapp {
+        width: 100%;
+    }
+
+    .sobre-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sobre-texto {
+        text-align: center;
+    }
+}
