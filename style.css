@@ -171,8 +171,8 @@ section {
 }
 
 .flashcard {
-    width: 300px; /* Largura fixa para desktops */
-    height: 200px;
+    width: 300px; /* Largura fixa */
+    height: 200px; /* Altura fixa */
     perspective: 1000px; /* Necessário para o efeito de flip */
     position: relative;
 }
@@ -181,32 +181,35 @@ section {
     width: 100%;
     height: 100%;
     position: absolute;
-    backface-visibility: hidden;
+    backface-visibility: hidden; /* Esconde o lado oposto */
     display: flex;
     align-items: center;
     justify-content: center;
     border: 1px solid #ccc;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.6s;
+    transition: transform 0.6s ease-in-out; /* Suaviza o efeito de rotação */
 }
 
 .flashcard .front {
     background-color: #f9f9f9;
+    z-index: 2; /* Garante que a frente esteja acima */
+    transform: rotateY(0deg); /* Frente visível inicialmente */
 }
 
 .flashcard .back {
     background-color: #007BFF;
     color: #fff;
-    transform: rotateY(180deg);
+    transform: rotateY(180deg); /* Verso escondido inicialmente */
 }
 
+/* Adiciona o efeito de flip ao passar o mouse */
 .flashcard:hover .front {
-    transform: rotateY(180deg);
+    transform: rotateY(-180deg); /* Gira a frente para fora */
 }
 
 .flashcard:hover .back {
-    transform: rotateY(0);
+    transform: rotateY(0deg); /* Gira o verso para dentro */
 }
 
 /* Responsividade para dispositivos móveis */
@@ -223,6 +226,47 @@ section {
 
     .flashcard-container {
         gap: 10px; /* Reduz o espaçamento entre os flashcards */
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu {
+        display: none; /* Esconde o menu por padrão */
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        background-color: #fff;
+        flex-direction: column;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .menu.active {
+        display: flex; /* Exibe o menu quando ativo */
+    }
+
+    .menu li {
+        padding: 10px;
+    }
+
+    .contato-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .btn-whatsapp {
+        width: 100%;
+    }
+
+    .sobre-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sobre-texto {
+        text-align: center;
     }
 }
 
