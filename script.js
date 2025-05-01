@@ -32,10 +32,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     type();
 
-    const menuToggle = document.querySelector(".menu-toggle");
-    const menu = document.querySelector(".menu");
+    const flashcards = document.querySelectorAll(".flashcard");
 
-    menuToggle.addEventListener("click", () => {
-        menu.classList.toggle("active");
+    flashcards.forEach((flashcard) => {
+        flashcard.addEventListener("click", () => {
+            flashcard.classList.toggle("flipped");
+        });
     });
 });
