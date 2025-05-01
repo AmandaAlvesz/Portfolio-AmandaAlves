@@ -165,56 +165,65 @@ section {
 /* Flashcards */
 .flashcard-container {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Permite que os flashcards se ajustem em várias linhas */
     justify-content: center;
     gap: 20px; /* Espaçamento entre os flashcards */
 }
 
 .flashcard {
-    width: 200px; /* Largura fixa para todos os flashcards */
-    height: 250px; /* Altura fixa para todos os flashcards */
+    width: 300px; /* Largura fixa para desktops */
+    height: 200px;
     perspective: 1000px; /* Necessário para o efeito de flip */
+    position: relative;
 }
 
-.flashcard .front,
-.flashcard .back {
+.flashcard .front, .flashcard .back {
     width: 100%;
     height: 100%;
     position: absolute;
-    backface-visibility: hidden; /* Esconde o lado de trás quando não está visível */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    backface-visibility: hidden;
     display: flex;
-    align-items: center; /* Centraliza verticalmente o conteúdo */
-    justify-content: center; /* Centraliza horizontalmente o conteúdo */
-    padding: 20px;
-    transition: transform 0.6s ease;
-    box-sizing: border-box; /* Garante que padding não afete o tamanho */
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.6s;
 }
 
 .flashcard .front {
-    background-color: #e06bbd;
-    color: white;
-    font-size: 18px; /* Tamanho da fonte para o título */
-    font-weight: bold;
-    text-align: center;
+    background-color: #f9f9f9;
 }
 
 .flashcard .back {
-    background-color: #f4f4f4;
-    color: #333;
-    font-size: 16px; /* Tamanho da fonte para o texto */
-    line-height: 1.5; /* Espaçamento entre linhas */
-    text-align: center;
-    transform: rotateY(180deg); /* Inicialmente escondido */
+    background-color: #007BFF;
+    color: #fff;
+    transform: rotateY(180deg);
 }
 
 .flashcard:hover .front {
-    transform: rotateY(180deg); /* Gira para esconder o lado da frente */
+    transform: rotateY(180deg);
 }
 
 .flashcard:hover .back {
-    transform: rotateY(0); /* Gira para mostrar o lado de trás */
+    transform: rotateY(0);
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    .flashcard {
+        width: 90%; /* Ajusta a largura para caber na tela */
+        height: auto; /* Permite altura dinâmica */
+    }
+
+    .flashcard .front, .flashcard .back {
+        padding: 20px; /* Adiciona espaçamento interno */
+        font-size: 16px; /* Ajusta o tamanho da fonte */
+    }
+
+    .flashcard-container {
+        gap: 10px; /* Reduz o espaçamento entre os flashcards */
+    }
 }
 
 /* Home */
