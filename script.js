@@ -39,6 +39,10 @@ document.addEventListener("DOMContentLoaded", function () {
         menu.classList.toggle("active");
     });
 
+    menuToggle.addEventListener("touchstart", () => {
+        menu.classList.toggle("active");
+    });
+
     const flashcards = document.querySelectorAll(".flashcard");
 
     flashcards.forEach((flashcard) => {
