@@ -165,121 +165,56 @@ section {
 /* Flashcards */
 .flashcard-container {
     display: flex;
-    flex-wrap: wrap; /* Permite que os flashcards se ajustem em várias linhas */
+    flex-wrap: wrap;
     justify-content: center;
     gap: 20px; /* Espaçamento entre os flashcards */
 }
 
 .flashcard {
-    width: 300px; /* Largura fixa */
-    height: 200px; /* Altura fixa */
+    width: 200px; /* Largura fixa para todos os flashcards */
+    height: 250px; /* Altura fixa para todos os flashcards */
     perspective: 1000px; /* Necessário para o efeito de flip */
-    position: relative;
 }
 
-.flashcard .front, .flashcard .back {
+.flashcard .front,
+.flashcard .back {
     width: 100%;
     height: 100%;
     position: absolute;
-    backface-visibility: hidden; /* Esconde o lado oposto */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #ccc;
+    backface-visibility: hidden; /* Esconde o lado de trás quando não está visível */
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.6s ease-in-out; /* Suaviza o efeito de rotação */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center; /* Centraliza verticalmente o conteúdo */
+    justify-content: center; /* Centraliza horizontalmente o conteúdo */
+    padding: 20px;
+    transition: transform 0.6s ease;
+    box-sizing: border-box; /* Garante que padding não afete o tamanho */
 }
 
 .flashcard .front {
-    background-color: #f9f9f9;
-    z-index: 2; /* Garante que a frente esteja acima */
-    transform: rotateY(0deg); /* Frente visível inicialmente */
+    background-color: #e06bbd;
+    color: white;
+    font-size: 18px; /* Tamanho da fonte para o título */
+    font-weight: bold;
+    text-align: center;
 }
 
 .flashcard .back {
-    background-color: #007BFF;
-    color: #fff;
-    transform: rotateY(180deg); /* Verso escondido inicialmente */
+    background-color: #f4f4f4;
+    color: #333;
+    font-size: 16px; /* Tamanho da fonte para o texto */
+    line-height: 1.5; /* Espaçamento entre linhas */
+    text-align: center;
+    transform: rotateY(180deg); /* Inicialmente escondido */
 }
 
-/* Adiciona o efeito de flip ao passar o mouse */
 .flashcard:hover .front {
-    transform: rotateY(-180deg); /* Gira a frente para fora */
+    transform: rotateY(180deg); /* Gira para esconder o lado da frente */
 }
 
 .flashcard:hover .back {
-    transform: rotateY(0deg); /* Gira o verso para dentro */
-}
-
-/* Responsividade para dispositivos móveis */
-@media (max-width: 768px) {
-    .flashcard {
-        width: 300px; /* Mantém o tamanho fixo */
-        height: 200px; /* Mantém o tamanho fixo */
-    }
-
-    .flashcard .front, .flashcard .back {
-        font-size: 14px; /* Ajusta o tamanho da fonte para caber no espaço */
-    }
-}
-
-/* Responsividade para dispositivos móveis */
-@media (max-width: 768px) {
-    .flashcard {
-        width: 90%; /* Ajusta a largura para caber na tela */
-        height: auto; /* Permite altura dinâmica */
-    }
-
-    .flashcard .front, .flashcard .back {
-        padding: 20px; /* Adiciona espaçamento interno */
-        font-size: 16px; /* Ajusta o tamanho da fonte */
-    }
-
-    .flashcard-container {
-        gap: 10px; /* Reduz o espaçamento entre os flashcards */
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    .menu {
-        display: none; /* Esconde o menu por padrão */
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 200px;
-        background-color: #fff;
-        flex-direction: column;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .menu.active {
-        display: flex; /* Exibe o menu quando ativo */
-    }
-
-    .menu li {
-        padding: 10px;
-    }
-
-    .contato-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .btn-whatsapp {
-        width: 100%;
-    }
-
-    .sobre-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .sobre-texto {
-        text-align: center;
-    }
+    transform: rotateY(0); /* Gira para mostrar o lado de trás */
 }
 
 /* Home */
