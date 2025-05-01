@@ -217,6 +217,15 @@ section {
     transform: rotateY(0); /* Gira para mostrar o lado de trás */
 }
 
+/* Adiciona o efeito de flip com a classe flipped */
+.flashcard.flipped .front {
+    transform: rotateY(180deg); /* Gira a frente para fora */
+}
+
+.flashcard.flipped .back {
+    transform: rotateY(0deg); /* Gira o verso para dentro */
+}
+
 /* Home */
 .home-section {
     display: flex;
