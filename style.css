@@ -67,6 +67,17 @@ h1 {
     display: flex; /* Exibe o menu */
 }
 
+/* Esconde o menu em telas pequenas */
+.nav-links {
+    display: none;
+    flex-direction: column;
+}
+
+/* Mostra quando ativado via JS */
+.nav-links.active {
+    display: flex;
+}
+
 /* Estilo dos itens do menu */
 .menu li {
     padding: 10px 20px;
