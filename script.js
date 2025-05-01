@@ -33,14 +33,14 @@ document.addEventListener("DOMContentLoaded", function () {
     type();
 
     const menuToggle = document.querySelector(".menu-toggle");
-    const menu = document.querySelector(".menu");
+    const navLinks = document.querySelector(".nav-links");
 
     menuToggle.addEventListener("click", () => {
-        menu.classList.toggle("active");
+        navLinks.classList.toggle("active");
     });
 
     menuToggle.addEventListener("touchstart", () => {
-        menu.classList.toggle("active");
+        navLinks.classList.toggle("active");
     });
 
     const flashcards = document.querySelectorAll(".flashcard");
