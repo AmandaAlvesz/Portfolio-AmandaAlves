@@ -37,39 +37,52 @@ h1 {
     position: relative;
 }
 
+/* Exibe o botão de hambúrguer apenas em telas pequenas */
 .menu-toggle {
     display: none;
+    font-size: 24px;
     background: none;
     border: none;
-    font-size: 24px;
-    color: white;
     cursor: pointer;
 }
 
+/* Estilo padrão do menu */
 .menu {
-    display: flex;
+    display: none; /* Esconde o menu por padrão */
+    flex-direction: column;
     list-style: none;
-    margin: 0;
     padding: 0;
+    margin: 0;
+    background-color: #fff; /* Cor de fundo para o menu */
+    position: absolute; /* Para sobrepor o conteúdo */
+    top: 60px; /* Ajuste conforme a altura do header */
+    right: 10px; /* Alinhamento à direita */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
+    border-radius: 8px; /* Bordas arredondadas */
+    z-index: 1000; /* Garante que o menu fique acima de outros elementos */
 }
 
+/* Quando o menu está ativo */
+.menu.active {
+    display: flex; /* Exibe o menu */
+}
+
+/* Estilo dos itens do menu */
 .menu li {
-    margin: 0 15px;
+    padding: 10px 20px;
+    text-align: center;
 }
 
-.menu li a, 
-.menu li .btn {
+.menu li a {
     text-decoration: none;
-    color: white;
-    padding: 10px 15px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    color: #333; /* Cor do texto */
+    font-weight: bold;
 }
 
-.menu li a:hover, 
-.menu li .btn:hover {
-    background-color: #ddd;
-    color: black;
+.menu li a:hover {
+    color: #007BFF; /* Cor ao passar o mouse */
 }
+
 /* Ícones sociais no canto esquerdo */
 .social-icons {
     position: fixed;
@@ -82,7 +95,7 @@ h1 {
     z-index: 1000;
 }
 
-.social-icons a {
+social-icons a {
     color: rgb(19, 18, 18);
     font-size: 22px;
     text-decoration: none;
@@ -426,27 +439,27 @@ footer a:hover {
 
 /* Responsividade para dispositivos menores */
 @media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
     .menu {
-        display: none;
-        flex-direction: column;
-        background-color: #333;
+        display: none; /* Esconde o menu por padrão */
         position: absolute;
-        top: 100%;
+        top: 60px;
         right: 0;
-        width: 100%;
+        width: 200px;
+        background-color: #fff;
+        flex-direction: column;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .menu.active {
+        display: flex; /* Exibe o menu quando ativo */
     }
 
     .menu li {
-        margin: 0;
-        text-align: center;
-    }
-
-    .menu.show {
-        display: flex;
-    }
-
-    .menu-toggle {
-        display: block;
+        padding: 10px;
     }
 
     .contato-container {
