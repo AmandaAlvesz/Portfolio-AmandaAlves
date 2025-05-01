@@ -38,7 +38,7 @@ h1 {
 }
 
 /* Exibe o botão de hambúrguer apenas em telas pequenas */
-.menu-toggle {
+.nav-links-toggle {
     display: none;
     font-size: 24px;
     background: none;
@@ -46,28 +46,28 @@ h1 {
     cursor: pointer;
 }
 
-/* Estilo padrão do menu */
-.menu {
-    display: none; /* Esconde o menu por padrão */
+/* Estilo padrão do nav-links */
+.nav-links {
+    display: none; /* Esconde o nav-links por padrão */
     flex-direction: column;
     list-style: none;
     padding: 0;
     margin: 0;
-    background-color: #fff; /* Cor de fundo para o menu */
+    background-color: #fff; /* Cor de fundo para o nav-links */
     position: absolute; /* Para sobrepor o conteúdo */
     top: 60px; /* Ajuste conforme a altura do header */
     right: 10px; /* Alinhamento à direita */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
     border-radius: 8px; /* Bordas arredondadas */
-    z-index: 1000; /* Garante que o menu fique acima de outros elementos */
+    z-index: 1000; /* Garante que o nav-links fique acima de outros elementos */
 }
 
-/* Quando o menu está ativo */
-.menu.active {
-    display: flex; /* Exibe o menu */
+/* Quando o nav-links está ativo */
+.nav-links {
+    display: flex; /* Exibe o nav-links */
 }
 
-/* Esconde o menu em telas pequenas */
+/* Esconde o nav-links em telas pequenas */
 .nav-links {
     display: none;
     flex-direction: column;
@@ -78,19 +78,19 @@ h1 {
     display: flex;
 }
 
-/* Estilo dos itens do menu */
-.menu li {
+/* Estilo dos itens do nav-links */
+.nav-links li {
     padding: 10px 20px;
     text-align: center;
 }
 
-.menu li a {
+.nav-links li a {
     text-decoration: none;
     color: #333; /* Cor do texto */
     font-weight: bold;
 }
 
-.menu li a:hover {
+.nav-links li a:hover {
     color: #007BFF; /* Cor ao passar o mouse */
 }
 
@@ -459,12 +459,12 @@ footer a:hover {
 
 /* Responsividade para dispositivos menores */
 @media (max-width: 768px) {
-    .menu-toggle {
+    .nav-links-toggle {
         display: block;
     }
 
-    .menu {
-        display: none; /* Esconde o menu por padrão */
+    .nav-links {
+        display: none; /* Esconde o nav-links por padrão */
         position: absolute;
         top: 60px;
         right: 0;
@@ -474,11 +474,11 @@ footer a:hover {
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
-    .menu.active {
-        display: flex; /* Exibe o menu quando ativo */
+    .nav-links.active {
+        display: flex; /* Exibe o nav-links quando ativo */
     }
 
-    .menu li {
+    .nav-links li {
         padding: 10px;
     }
 
