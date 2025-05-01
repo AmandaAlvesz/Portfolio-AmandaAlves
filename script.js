@@ -32,6 +32,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     type();
 
+    const menuToggle = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    menuToggle.addEventListener("click", () => {
+        menu.classList.toggle("active");
+    });
+
     const flashcards = document.querySelectorAll(".flashcard");
 
     flashcards.forEach((flashcard) => {
