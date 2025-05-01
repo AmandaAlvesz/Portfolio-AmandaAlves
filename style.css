@@ -215,6 +215,18 @@ section {
 /* Responsividade para dispositivos móveis */
 @media (max-width: 768px) {
     .flashcard {
+        width: 300px; /* Mantém o tamanho fixo */
+        height: 200px; /* Mantém o tamanho fixo */
+    }
+
+    .flashcard .front, .flashcard .back {
+        font-size: 14px; /* Ajusta o tamanho da fonte para caber no espaço */
+    }
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    .flashcard {
         width: 90%; /* Ajusta a largura para caber na tela */
         height: auto; /* Permite altura dinâmica */
     }
